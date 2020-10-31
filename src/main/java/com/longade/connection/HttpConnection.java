@@ -7,6 +7,8 @@ import org.jsoup.select.Elements;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HttpConnection {
 
@@ -25,16 +27,22 @@ public class HttpConnection {
         }
     }
 
-    public void getHTML(String strURL) {
+    public List<String> getHTML(String strURL) {
+
+        List<String> urls = new ArrayList<>();
+
         try {
             Document doc = Jsoup.connect(strURL).get();
             Elements list = doc.select("ul > li");
             for (Element single : list) {
                 System.out.println(single.text());
+                urls.add(single.text());
             }
+            return urls;
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
+            return null;
         }
     }
 
