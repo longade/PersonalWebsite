@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SitesConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("home");
-        registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/").setViewName("redirect:/index.html");
+        registry.addViewController("/home").setViewName("forward:/pages/home.html");
         registry.addViewController("/dave").setViewName("dave");
     }
 
