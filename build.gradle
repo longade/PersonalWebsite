@@ -27,7 +27,9 @@ dependencies {
 
     implementation 'org.jsoup:jsoup:1.13.1'
 
-    implementation 'net.lightbody.bmp:browsermob-proxy:2.0.0'
+    implementation 'net.lightbody.bmp:browsermob-core:2.1.5'
+
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
 }
 
 test {
