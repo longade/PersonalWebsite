@@ -26,6 +26,8 @@ dependencies {
     }
 
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    implementation 'net.lightbody.bmp:browsermob-proxy:2.0.0'
 }
 
 test {

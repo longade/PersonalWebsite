@@ -9,7 +9,7 @@ public class SitesConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("redirect:/index.html");
-        registry.addViewController("/home").setViewName("forward:/pages/home.html");
+        registry.addViewController("/home").setViewName("redirect:/pages/home.html");
         registry.addViewController("/dave").setViewName("dave");
     }
 
