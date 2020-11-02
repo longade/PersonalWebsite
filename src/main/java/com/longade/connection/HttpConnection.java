@@ -72,8 +72,8 @@ public class HttpConnection {
         List<String> urls = new ArrayList<>();
 
         try {
-            browserMobProxy.newHar("onlyfoot");
-            driver.get("http://onlyfoot.net/ch3sport.html");
+            browserMobProxy.newHar("google.it");
+            driver.get("https://www.google.it");
             Thread.sleep(5000);
             Har har = browserMobProxy.getHar();
             List<HarEntry> entries = har.getLog().getEntries();
