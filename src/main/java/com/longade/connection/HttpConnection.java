@@ -4,6 +4,7 @@ import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.core.har.Har;
+import net.lightbody.bmp.core.har.HarEntry;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -59,6 +61,7 @@ public class HttpConnection {
         options.setProxy(proxy);
         options.addArguments("--start-maximized");
         options.addArguments("--incognito");
+        // options.addArguments("--headless");
 
         WebDriver driver = new ChromeDriver(options);
 
@@ -69,10 +72,20 @@ public class HttpConnection {
         List<String> urls = new ArrayList<>();
 
         try {
-            browserMobProxy.newHar("google.it");
-            driver.get("https://www.google.it");
+            browserMobProxy.newHar("onlyfoot");
+            driver.get("http://onlyfoot.net/ch3sport.html");
             Thread.sleep(5000);
             Har har = browserMobProxy.getHar();
+            List<HarEntry> entries = har.getLog().getEntries();
+            FileWriter fileWriter = new FileWriter("clean_requests.txt");
+            for (HarEntry entry : entries) {
+                String url = entry.getRequest().getUrl();
+                if (url.contains(".m3u8")) {
+                    System.out.println(url);
+                    fileWriter.write(url + System.lineSeparator());
+                }
+            }
+            fileWriter.close();
             File harFile = new File("network_requests.har");
             har.writeTo(harFile);
             return null;
