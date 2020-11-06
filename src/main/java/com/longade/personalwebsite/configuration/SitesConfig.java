@@ -1,4 +1,4 @@
-package com.longade.configuration;
+package com.longade.personalwebsite.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

@@ -1,4 +1,4 @@
-package com.longade.thread;
+package com.longade.personalwebsite.thread;
 
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;

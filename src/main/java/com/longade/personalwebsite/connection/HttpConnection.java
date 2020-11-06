@@ -1,4 +1,4 @@
-package com.longade.connection;
+package com.longade.personalwebsite.connection;
 
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;

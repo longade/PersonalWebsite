@@ -1,15 +1,12 @@
-package com.longade.controller;
+package com.longade.personalwebsite.controller;
 
-import com.longade.connection.HttpConnection;
+import com.longade.personalwebsite.connection.HttpConnection;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.List;
 
 @RestController

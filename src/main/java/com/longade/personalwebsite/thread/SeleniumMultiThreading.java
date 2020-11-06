@@ -1,4 +1,4 @@
-package com.longade.thread;
+package com.longade.personalwebsite.thread;
 
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.client.ClientUtil;
@@ -15,7 +15,6 @@ public class SeleniumMultiThreading extends Thread {
     WebDriver driver;
     String url;
     BrowserMobProxy browserMobProxy;
-    Boolean proxyStopped = false;
 
     public SeleniumMultiThreading(String name, String url) {
         super(name);
